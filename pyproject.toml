@@ -1,0 +1,35 @@
+[project]
+name = "Fly-in"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ntzzin", email = "nytgrab@gmail.com" }
+]
+requires-python = ">=3.15"
+dependencies = [
+    "flake8>=7.5.0",
+    "mypy>=2.4.1",
+    "ruff>=0.17.5",
+]
+
+[project.scripts]
+42-fly-in = "fly_in:main"
+
+[tool.uv.build-backend]
+module-name = "fly_in"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 79
+indent-width = 4
+
+[tool.ruff.lint]
+preview = true
+select = ["E", "W", "F4", "F8"]
+ignore = [
+    "E204", "E252", "W505", "F406", "F407", "F842"
+]
