@@ -64,19 +64,25 @@ wheels = [
 [[package]]
 name = "fly-in"
 version = "0.1.0"
-source = { editable = "." }
-dependencies = [
+source = { virtual = "." }
+
+[package.dev-dependencies]
+dev = [
     { name = "flake8" },
     { name = "mypy" },
+]
+ide = [
     { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [
+
+[package.metadata.requires-dev]
+dev = [
     { name = "flake8", specifier = ">=7.5.0" },
     { name = "mypy", specifier = ">=2.4.1" },
-    { name = "ruff", specifier = ">=0.17.5" },
 ]
+ide = [{ name = "ruff", specifier = ">=0.17.5" }]
 
 [[package]]
 name = "librt"
