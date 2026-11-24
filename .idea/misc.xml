@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="uv (42-Fly-in)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="~/42-Fly-in/.venv" project-jdk-type="Python SDK" />
 </project>

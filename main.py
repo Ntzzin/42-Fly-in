@@ -1,5 +1,4 @@
-from src.fly_in.exceptions import *
-
+from fly_in.exceptions import ValidationError
 if __name__ == '__main__':
     try:
         raise (ValidationError("main.py", 3, "I want this"))

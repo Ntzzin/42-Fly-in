@@ -6,11 +6,11 @@ readme = "README.md"
 authors = [
     { name = "Ntzzin", email = "nytgrab@gmail.com" }
 ]
-requires-python = ">=3.15"
+requires-python = ">=3.14"
 dependencies = []
 
 [tool.uv]
-package = false
+package = true
 
 [tool.uv.build-backend]
 module-name = "fly_in"
@@ -26,10 +26,15 @@ build-backend = "uv_build"
 dev = [
     "flake8>=7.5.0",
     "mypy>=2.4.1",
+    "pytest>=9.2.0",
 ]
 ide = [
     "ruff>=0.17.5",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
 
 [tool.ruff]
 line-length = 79
