@@ -3,7 +3,7 @@ name: Validate
 on: [push, pull_request]
 
 jobs:
-  validate:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,9 +19,23 @@ jobs:
         run: uv run flake8 . --exclude .venv --format='::error file=%(path)s,line=%(row)d,col=%(col)d::%(code)s %(text)s'
 
       - name: Run mypy
+        if: ${{ !cancelled() }}
         run: |
-          uv run mypy . --show-column-numbers --no-error-summary --strict | \
-          sed -E 's/^(.+):([0-9]+):([0-9]+): error: (.*)$/::error file=\1,line=\2,col=\3::\4/'
+          uv run mypy . --show-column-numbers --no-error-summary --strict > mypy.txt || status=$?
+          sed -E 's/^([^:]+):([0-9]+):([0-9]+): (error|warning): (.*)$/::\4 file=\1,line=\2,col=\3::\5/' mypy.txt
+          exit ${status:-0}
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
 
       - name: Run unit tests
         run: uv run pytest
