@@ -9,5 +9,3 @@ class Configuration:
     end_hub: str
     hubs: list[tuple[str, int, int, Optional[dict]]]
     connections: list[tuple[str, str, Optional[dict]]]
-
-

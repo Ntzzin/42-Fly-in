@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e27d16a6-e2cb-4099-9458-777768dbb264" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fly_in/Configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Fly-in.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fly-in.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pyLspTools.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyLspTools.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fly_in/Parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fly_in/exceptions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fly_in/exceptions/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/validate.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/validate.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
