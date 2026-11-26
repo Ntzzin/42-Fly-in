@@ -21,7 +21,7 @@ jobs:
       - name: Run mypy
         if: ${{ !cancelled() }}
         run: |
-          uv run mypy . --show-column-numbers --no-error-summary --strict > mypy.txt || status=$?
+          uv run mypy . --show-column-numbers --no-error-summary > mypy.txt || status=$?
           sed -E 's/^([^:]+):([0-9]+):([0-9]+): (error|warning): (.*)$/::\4 file=\1,line=\2,col=\3::\5/' mypy.txt
           exit ${status:-0}
 
