@@ -1,6 +1,6 @@
-from fly_in.exceptions import ValidationError
+from fly_in.exceptions import ParsingError
 if __name__ == '__main__':
     try:
-        raise (ValidationError("main.py", 3, "I want this"))
+        raise (ParsingError("I want this"))
     except Exception as e:
         print(e)
